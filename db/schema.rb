@@ -15,8 +15,13 @@ ActiveRecord::Schema.define(:version => 20131019001445) do
 
   create_table "participants", :force => true do |t|
     t.string   "worker_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "hit_id"
+    t.string   "assignment_id"
+    t.integer  "cond"
+    t.string   "ip_addr"
+    t.string   "survey_code"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
