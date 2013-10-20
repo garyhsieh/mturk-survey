@@ -42,14 +42,15 @@ class ParticipantsController < ApplicationController
   def create
     @participant = Participant.new(params[:participant])
 
-    respond_to do |format|
-      if @participant.save
-        format.html { redirect_to @participant, notice: 'Participant was successfully created.' }
-        format.json { render json: @participant, status: :created, location: @participant }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
+    if @participant.save
+
+      ##redirect_to('https://www.mturk.com/mturk/externalSubmit?condition='+@participant.cond.to_s+'&participantId='+@participant.id.to_s+'&assignmentId='+@participant.assignment_id.to_s+'&hitId='+@participant.hit_id.to_s+'&workerId='+@participant.worker_id.to_s+'') 
+
+
+      redirect_to('https://workersandbox.mturk.com/mturk/externalSubmit?condition='+@participant.cond.to_s+'&participantId='+@participant.id.to_s+'&assignmentId='+@participant.assignment_id.to_s+'&hitId='+@participant.hit_id.to_s+'&workerId='+@participant.worker_id.to_s+'') 
+
+    else
+      render :action => "new" 
     end
   end
 
