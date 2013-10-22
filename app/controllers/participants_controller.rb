@@ -26,7 +26,7 @@ class ParticipantsController < ApplicationController
       @participant.ip_addr = request.remote_ip
       @participant.cond = rand(5)
     else
-      @participant = @participant_old
+      @participant = @participant_old.dup
     end
 
 
