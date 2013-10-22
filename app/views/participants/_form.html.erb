@@ -46,7 +46,7 @@
 
   <div class="form-actions">
 
-  <% ##if @participant.worker_id != nil and @participant.worker_id != ""  %>
+  <% if @participant.worker_id != nil and @participant.worker_id != ""  %>
 
     <p>To complete the HIT, please:</p>
 
@@ -71,9 +71,9 @@
 
     <br>
 
-  <% ##else %>
-    <!-- *You must accept HIT to continue.<br> -->
-  <% ##end %>
+  <% else %>
+    *You must accept HIT to continue.<br>
+  <% end %>
 
 </div>
 
