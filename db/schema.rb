@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131019001445) do
+ActiveRecord::Schema.define(:version => 20131024225328) do
 
   create_table "participants", :force => true do |t|
     t.string   "worker_id"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(:version => 20131019001445) do
     t.integer  "cond"
     t.string   "ip_addr"
     t.string   "survey_code"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "resubmits", :force => true do |t|
+    t.string   "worker_id"
+    t.string   "hit_id"
+    t.string   "assignment_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

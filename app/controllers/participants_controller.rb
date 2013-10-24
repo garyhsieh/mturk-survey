@@ -1,5 +1,5 @@
 class ParticipantsController < ApplicationController
-  protect_from_forgery :except => [:new, :create, :show]
+  protect_from_forgery :except => [:new, :create, :show, :index]
 
 
   # GET /participants/1
@@ -44,10 +44,10 @@ class ParticipantsController < ApplicationController
 
     if @participant.save
 
-      redirect_to('https://www.mturk.com/mturk/externalSubmit?condition='+@participant.cond.to_s+'&participantId='+@participant.id.to_s+'&assignmentId='+@participant.assignment_id.to_s+'&hitId='+@participant.hit_id.to_s+'&workerId='+@participant.worker_id.to_s+'') 
+      redirect_to('https://www.mturk.com/mturk/externalSubmit?cond='+@participant.cond.to_s+'&participantId='+@participant.id.to_s+'&assignmentId='+@participant.assignment_id.to_s+'&hitId='+@participant.hit_id.to_s+'&workerId='+@participant.worker_id.to_s+'') 
 
 
-      ##redirect_to('https://workersandbox.mturk.com/mturk/externalSubmit?condition='+@participant.cond.to_s+'&participantId='+@participant.id.to_s+'&assignmentId='+@participant.assignment_id.to_s+'&hitId='+@participant.hit_id.to_s+'&workerId='+@participant.worker_id.to_s+'') 
+      ##redirect_to('https://workersandbox.mturk.com/mturk/externalSubmit?cond='+@participant.cond.to_s+'&participantId='+@participant.id.to_s+'&assignmentId='+@participant.assignment_id.to_s+'&hitId='+@participant.hit_id.to_s+'&workerId='+@participant.worker_id.to_s+'') 
 
     else
       render :action => "new" 

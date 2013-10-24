@@ -1,0 +1,17 @@
+<%= form_for @resubmit, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.hidden_field :worker_id %>
+  <%= f.hidden_field :hit_id %>
+  <%= f.hidden_field :assignment_id %>
+
+  <div class="container">
+  <p>This is the HIT for those who have had problem submitting our HIT on Flu Shots. We have not been able to isolate the problem, and many others have submitted successfully. </p>
+  <p>However, this should at least allow us to compensate you for your time. We have increased the pay slightly to $1.75 for pyour troubles.</p>
+
+  <% if @resubmit != nil and @resubmit.worker_id != nil and @resubmit.worker_id != ""  %>
+  <%= f.submit "commit hit", :class => 'btn btn-primary' %>
+  <% else %>
+    *You must accept HIT to continue.<br>
+  <% end %>
+
+  </div>
+<% end %>

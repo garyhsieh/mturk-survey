@@ -1,4 +1,7 @@
 MturkSurvey::Application.routes.draw do
+  resources :resubmits
+
+
   resources :participants
 
 

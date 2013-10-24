@@ -1,7 +1,7 @@
 class CreateParticipants < ActiveRecord::Migration
   def change
     create_table :participants do |t|
-      t.string :worker_id
+      t.string    :worker_id
       t.string    :hit_id
       t.string    :assignment_id
       t.integer   :cond
