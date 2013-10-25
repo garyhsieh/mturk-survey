@@ -27,6 +27,9 @@ class ParticipantsController < ApplicationController
       @participant.cond = rand(5)
     else
       @participant = @participant_old.dup
+      @participant.assignment_id = params[:assignmentId]
+      @participant.hit_id = params[:hitId]
+      @participant.ip_addr = request.remote_ip
     end
 
 
