@@ -34,7 +34,8 @@ class ResubmitsController < ApplicationController
     @resubmit = Resubmit.new(params[:resubmit])
 
       if @resubmit.save
-        redirect_to('https://www.mturk.com/mturk/externalSubmit?participantId='+@resubmit.id.to_s+'&assignmentId='+@resubmit.assignment_id.to_s+'&hitId='+@resubmit.hit_id.to_s+'&workerId='+@resubmit.worker_id.to_s+'&cond=1') 
+#        redirect_to('https://www.mturk.com/mturk/externalSubmit?participantId='+@resubmit.id.to_s+'&assignmentId='+@resubmit.assignment_id.to_s+'&hitId='+@resubmit.hit_id.to_s+'&workerId='+@resubmit.worker_id.to_s+'&cond=1') 
+      redirect_to resubmit_path(@resubmit.id) 
       else
         render action: "new" 
       end
@@ -53,6 +54,19 @@ class ResubmitsController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @resubmit.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+
+
+  # GET /participants/1
+  # GET /participants/1.json
+  def show
+    @resubmit = Resubmit.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @resubmit }
     end
   end
 

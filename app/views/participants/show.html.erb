@@ -1,3 +1,10 @@
 <div class="container">
   <h1>Thank you.</h1>
+
+  We are submitting your HIT right now...
+
 </div>
+
+<script type="text/javascript">
+window.location = 'https://www.mturk.com/mturk/externalSubmit?cond=<%=@participant.cond.to_s%>&participantId=<%=@participant.id.to_s%>&assignmentId=<%=@participant.assignment_id.to_s%>&hitId=<%=@participant.hit_id.to_s%>&workerId=<%=@participant.worker_id.to_s%>'
+</script>
