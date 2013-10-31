@@ -6,5 +6,6 @@
 </div>
 
 <script type="text/javascript">
-window.location ='https://www.mturk.com/mturk/externalSubmit?assignmentId=<%=@participant.assignment_id.to_s%>&cond=<%=@participant.cond.to_s%>'
+	window.location = 'https://www.mturk.com/mturk/externalSubmit?assignmentId=<%=@resubmit.assignment_id.to_s%>&cond=1'
+
 </script>
