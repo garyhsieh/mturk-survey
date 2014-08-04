@@ -8,37 +8,12 @@
 
   <div class="container">
 
+  <br>
 
   <p>
 
-  1.  EXPLANATION OF THE RESEARCH and WHAT YOU WILL DO:    
+  You have been invited to participate in this research study to help us understand why people perform work on mechanical turk. Your participation would take about 15 minutes. You are free to withdraw your consent and to discontinue participation at any time. You must be 18 or older to participate. 
 
-  <ul>
-  <li>You are being asked to participate in a research study on people's perception of Flu Shots. You will also be asked to read over a Public Service Announcement (PSA) on the importance of flu shots, and answer a few questions afterwards.
-  <li>Your participation in this study takes less than 15 minutes.
-  <li>You must be 18 or over to participate.
-  </ul>
-
-  2. YOUR RIGHTS TO PARTICIPATE, SAY NO, OR WITHDRAW:
-  <ul>
-  <li>Participation in this research project is completely voluntary.  You have the right to say no. You may change your mind at any time and withdraw. You may choose not to answer specific questions or to stop participating at any time. Whether you choose to participate or not will have no affect on your grade or evaluation.
-  </ul>
-
-  3.  COSTS AND COMPENSATION FOR BEING IN THE STUDY:
-
-  <ul>
-  <li>The study will take approximately fifteen minutes to complete.
-  <li>In exchange for your participation, you will receive $1.50, which will be awarded to you through the Mechanical Turk system. 
-  <li>This research study will not involve any cost for you. 
-  </ul>
-
-  4.  CONTACT INFORMATION FOR QUESTIONS AND CONCERNS:        
-
-  <ul>
-  <li>If you have concerns or questions about this study, such as scientific issues, how to do any part of it, or to report an injury, please contact the researcher Gary Hsieh by email at garyhs@uw.edu or by mail at 414 Sieg Hall, Campus Box 352315, University of Washington, Seattle, WA 98195.
-  </ul>  
-
-  <b>By continuing with the study, you indicate your voluntary agreement to participate in this online survey.</b>
 
   </p>
 
@@ -52,12 +27,12 @@
 
     <p>1. Begin and complete the survey. </p>
 
-    <%= link_to 'Click Here To Complete Survey', Participant::CONDITION_URLS[@participant.cond], :target => '_blank', :style=>"font-size:20px;" %>
+    <%= link_to 'Click Here for the Survey', Participant::CONDITION_URLS[@participant.cond], :target => '_blank', :style=>"font-size:20px;" %>
 
     <br><br><br>
 
-    <p>2. Enter in the secret code you receive from completing the survey below, and then submit the HIT.
-    <br>Your work will be rejected if the code does not match with the one you get from completing the HIT.</p>
+    <p>2. Enter in the <b>survey code</b> you receive from completing the survey below, and then submit the HIT.
+    <br>Your work will be rejected if the code does not match with the one you received from completing the HIT.</p>
 
     <div class="control-group">
       <%= f.label :survey_code, :class => 'control-label' %>
